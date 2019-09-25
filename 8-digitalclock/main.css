@@ -1,0 +1,18 @@
+body{
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+}
+
+.container{
+    flex: 0 0 70%;
+    border: 0.1rem solid black;
+    padding: 1rem;
+    background-color: black;
+    color: chartreuse;   
+    font-size: 3rem;
+    opacity: 0.6; 
+}
