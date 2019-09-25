@@ -1,0 +1,76 @@
+body{
+    min-height: 100vh;
+    /* min-width: 80vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{    
+    flex: 0 0 80%;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+    position: relative;
+    padding: 0.5rem;    
+}
+
+#display{
+    background-color:rgb(59, 52, 52);
+    color:white;
+    text-align: left;
+    margin: 0rem;        
+    /* padding: 1rem; */
+    height: 3rem;
+    font-size: 2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 99.7%;
+    
+}
+
+.btn{
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 0.01rem solid black;
+    font-size: 1.8rem;
+    /* padding: 1rem;     */
+    outline:none;
+    cursor: pointer;
+    /* width: 4.71rem; */
+    width: 24.9%;
+    text-align: center;
+}
+
+.btn:hover{
+    background-color: cornflowerblue;
+    color:white;
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+@keyframes example {
+    from {background-color: whitesmoke}
+    to {background-color: cornflowerblue;}
+  }
+
+.btn:active{
+    background-color: grey;
+    box-shadow:1px 1px grey;
+}
+
+.btnOrange{
+    background-color: orange;
+    color:white;
+}
+
+.btnGray{
+    background-color: lightgray;
+}
+
+.btnGreen{
+    background-color: green;    
+}
+
+.btnRed{
+    background-color: red;
+}
