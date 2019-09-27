@@ -1,0 +1,28 @@
+body{
+    display:flex;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    flex: 0 0 40%;
+    border: 0.1rem solid black;
+    padding: 1rem;
+    padding-top: 0;
+    background-color: antiquewhite;
+    box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem black;
+    border-radius: 1rem;
+}
+
+.container:hover{
+    cursor:pointer;
+}
+
+.container:active{
+    box-shadow: none;
+}
+
+div > p {
+    color: red;
+}

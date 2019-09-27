@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>CSS:Floating Elements</title>
+
+<style>
+ #header{
+    width:100%;
+    background-color:#000000;
+    color:#ffffff;
+    display:block;
+    text-align:center;
+ }
+
+ #navigation{
+    width:20%;
+    background-color:#555555;
+    color:#ffffff;
+    float:left;
+    display: inline-block;
+ }
+
+ #content{
+    background-color:#ffffff;
+    color:#000000;
+    float:right;
+    width:50%;
+    display:inline-block;
+ }
+
+ #footer{
+    width:100%;
+    background-color:#000000;
+    color:#ffffff;
+    float:left;
+    display:block;
+ }
+</style>
+</head>
+
+<body>
+
+<div id="header">
+    <h1>This is the Page Header</h1>
+</div>
+<div id="navigation">
+    Item#1<br>
+    Item#2<br>
+    Item#3<br>
+    Item#4
+</div>
+<div id="content">
+    <p>Page content here.This is where we describe the content on the page.</p>
+</div>
+<div id="footer">
+    <p>This is the footer.</p>
+</div>
+
+</body>
+
+</html>
