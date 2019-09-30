@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    
+    <script>       
+        document.getElementById('box1').onclick = function() {  
+            document.getElementById('box1').style.border = "2rem solid black";
+        }
+        
+        document.getElementById('box1').ondblclick = function() {  
+            document.getElementById('box1').style.display = "none";
+        }
+    </script>
+</body>
+</html>

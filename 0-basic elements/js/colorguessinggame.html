@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color guess !</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    Guess a Color: 
+    <select id="option1">
+        <option value="0">Orange</option>
+        <option value="1">Red</option>
+        <option value="2">Yellow</option>        
+    </select>
+    <br><br>
+    <button id="btn1">Guess the Color!</button>
+    <br><br>
+    <div id="box1"></div>
+
+    <script>      
+        var alertMessage = "";
+        
+        document.getElementById("btn1").onclick = function(){
+            var colorList = ["Orange", "Red", "Yellow"];
+            var randomColorNumber = Math.floor(Math.random() * (colorList.length - 1));
+            var selectedColorNumber = parseInt(document.getElementById("option1").value);
+            if(selectedColorNumber == randomColorNumber){
+                alertMessage = "You're Right! The color was " + colorList[randomColorNumber] + "!";                
+            } else {
+                alertMessage = "Sorry! You were wrong! The correct color was " + colorList[randomColorNumber];
+            }
+            document.getElementById("box1").style.backgroundColor = colorList[randomColorNumber].toLowerCase();
+            alert(alertMessage);
+            
+        }
+    
+    </script>
+</body>
+</html>
