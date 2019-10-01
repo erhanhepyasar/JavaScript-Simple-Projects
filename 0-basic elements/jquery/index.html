@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>jQuery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <center>
+                <h3>jQuery</h3><br>
+                <button class="btn btn-primary" id="button1">#button1</button>
+                <button class="btn btn-info" id="button2">#button2</button>
+                <button class="btn btn-danger" id="button3">#button3</button>
+                <button class="btn btn-warning" id="button4">#button4</button>
+            </center>
+        </div> <!-- end jumbotron-->
+        <div class="row">
+            <div class="col-3">
+                <div id="section1" class="card">
+                    <div class="card-header text-white bg-primary">#section1</div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                    </div>
+                </div> <!-- end section-1 -->
+           </div> <!-- end col-xs-3 -->
+           <div class="col-3">
+                <div id="section2" class="card">
+                    <div class="card-header text-white bg-info">#section2</div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                    </div>
+                </div> <!-- end section-2 -->
+           </div> <!-- end col-xs-3 -->
+           <div class="col-3">
+                <div id="section3" class="card">
+                    <div class="card-header text-white bg-danger">#section3</div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                    </div>
+                </div> <!-- end section-3 -->
+           </div> <!-- end col-xs-3 -->
+           <div class="col-3">
+                <div id="section4" class="card">
+                    <div class="card-header text-white bg-warning">#section4</div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                    </div>
+                </div> <!-- end section-4 -->
+           </div> <!-- end col-xs-3 -->
+        </div> <!-- end row-->
+    </div> <!-- end container-->
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    // jQuery installation check
+    // if(typeof jQuery == 'undefined'){
+    //     alert('jQuery not installed')
+    // } else{
+    //     alert('jQuery is installed')
+    // }
+    
+    // jQuery samples
+    // $('#section1 .card-header').html('- new section -');
+    // $('#section1 .card-body').html('This is the updated HTML');
+    // $('#section1').css({
+    //     color:'red',
+    //     backgroundColor: 'black',
+    //     fontWeight: 'bold',
+    //     fontSize: '130%'
+    // });
+
+    // // jQuery is a chainable language
+    // $('#section1').slideUp(3000).slideDown(3000).slideToggle();
+    
+    // $('#section2').css({
+    //     fontWeight: '500'
+    // }).fadeOut(3000).fadeIn(3000).fadeToggle();
+
+    // $('#section3').hide(3000).show(3000);
+    
+    // $('div').fadeToggle(2000); // every div on the page
+
+    // $("[id*='sect'").slideToggle(1000).slideToggle(1000); // all id's containing '..'
+    // $("[id^='button']").fadeToggle(1000).fadeToggle(1000); // all id's starting with '..'
+    $("[id$='3']").slideToggle(1000); // all id's ending with '..'
+
+
+    </script>
+</body>
+
+</html>
