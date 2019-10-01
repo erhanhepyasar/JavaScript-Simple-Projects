@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>jQuery Tab Panel</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background:#000;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #000;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .tab-panels ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-panels ul li {
+            list-style-type: none;
+            display: inline-block;
+            background: #d9edf7;
+            margin: 0;
+            padding: 3px 10px;
+            border-radius: 10px 10px 0 0 ;
+            color: #337ab7;
+            font-weight: 200;
+        }
+
+        .tab-panels ul li:hover {
+            color:#fff;
+            background: #337ab7;
+        }
+
+        .tab-panels ul li.active {
+            color:#fff;
+            background: #337ab7;
+        }
+
+        .tab-panels .panel {
+            display: none;
+            background: #337ab7;
+            padding: 30px;
+            border-radius: 0 0 15px 15px;
+            color: #fff;
+        }
+
+        .tab-panels .panel.active {
+            display: block;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab-panels">
+            <ul class="tabs">
+                <li rel="panel1" class="active">panel 1</li>
+                <li rel="panel2">panel 2</li>
+                <li rel="panel3">panel 3</li>
+                <li rel="panel4">panel 4</li>
+            </ul>
+
+            <div id="panel1" class="panel active">
+                This is some content 1<br>
+                This is some content 1<br>
+                This is some content 1<br>
+                This is some content 1<br>
+                This is some content 1<br>
+            </div>
+            
+            <div id="panel2" class="panel">
+                This is some content 2<br>
+                This is some content 2<br>
+                This is some content 2<br>
+                This is some content 2<br>
+                This is some content 2<br>
+            </div>
+            
+            <div id="panel3" class="panel">
+                This is some content 3<br>
+                This is some content 3<br>
+                This is some content 3<br>
+                This is some content 3<br>
+                This is some content 3<br>
+            </div>
+            
+            <div id="panel4" class="panel">
+                This is some content 4<br>
+                This is some content 4<br>
+                This is some content 4<br>
+                This is some content 4<br>
+                This is some content 4<br>
+            </div>
+        </div> <!-- end tab panel div -->  
+
+    </div> <!-- end container div -->
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>    
+   
+    $(function(){
+
+        $(".tab-panels .tabs li").on('click', function(){
+            var panelToDisplay = $(this).attr('rel');
+            console.log(panelToDisplay);
+
+            $('.tab-panels .tabs').find('li.active').removeClass('active');
+            $(this).addClass('active');
+
+            $('.tab-panels .panel.active').slideUp(300, function(){
+                $(this).removeClass('active');
+                $('#'+panelToDisplay).slideDown(300, function(){
+                    $(this).addClass('active');
+
+                });
+
+            });
+
+        });
+
+
+    }); // end jQuery document ready function
+    
+
+    </script>
+</body>
+
+</html>

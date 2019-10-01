@@ -4,6 +4,14 @@
 <head>
 
     <title>jQuery</title>
+    
+    <style>
+        .amazing {
+            font-weight: 700;
+            color: red;
+        }
+    </style>
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
@@ -12,10 +20,10 @@
         <div class="jumbotron">
             <center>
                 <h3>jQuery</h3><br>
-                <button class="btn btn-primary" id="button1">#button1</button>
-                <button class="btn btn-info" id="button2">#button2</button>
-                <button class="btn btn-danger" id="button3">#button3</button>
-                <button class="btn btn-warning" id="button4">#button4</button>
+                <button data-section="section1" class="btn btn-primary" id="button1">#button1</button>
+                <button data-section="section2"class="btn btn-info" id="button2">#button2</button>
+                <button data-section="section3" class="btn btn-danger" id="button3">#button3</button>
+                <button data-section="section4" class="btn btn-warning" id="button4">#button4</button>
             </center>
         </div> <!-- end jumbotron-->
         <div class="row">
@@ -23,7 +31,12 @@
                 <div id="section1" class="card">
                     <div class="card-header text-white bg-primary">#section1</div>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                        <ul>
+                            <li>Red</li>
+                            <li>Orange</li>
+                            <li>Yellow</li>
+                            <li>Green</li>
+                        </ul> 
                     </div>
                 </div> <!-- end section-1 -->
            </div> <!-- end col-xs-3 -->
@@ -31,7 +44,12 @@
                 <div id="section2" class="card">
                     <div class="card-header text-white bg-info">#section2</div>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                        <ul>
+                            <li>Blue</li>
+                            <li>Purple</li>
+                            <li>Brown</li>
+                            <li>Black</li>
+                        </ul>
                     </div>
                 </div> <!-- end section-2 -->
            </div> <!-- end col-xs-3 -->
@@ -39,7 +57,12 @@
                 <div id="section3" class="card">
                     <div class="card-header text-white bg-danger">#section3</div>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                        <ul>
+                            <li>White</li>
+                            <li>Grey</li>
+                            <li>Tan</li>
+                            <li>Gold</li>
+                        </ul>
                     </div>
                 </div> <!-- end section-3 -->
            </div> <!-- end col-xs-3 -->
@@ -47,7 +70,12 @@
                 <div id="section4" class="card">
                     <div class="card-header text-white bg-warning">#section4</div>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                        <ul>
+                            <li>Pink</li>
+                            <li>Turquoise</li>
+                            <li>Teal</li>
+                            <li>Cyan</li>
+                        </ul>
                     </div>
                 </div> <!-- end section-4 -->
            </div> <!-- end col-xs-3 -->
@@ -58,14 +86,24 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+    
+    //////////////////////////////////////////////////////////////////////////
     // jQuery installation check
+    //////////////////////////////////////////////////////////////////////////
     // if(typeof jQuery == 'undefined'){
     //     alert('jQuery not installed')
     // } else{
     //     alert('jQuery is installed')
     // }
+    //
+    // Another way to check:
+    // $(function(){
+    //     alert('jQuery is Ready')
+    // });
     
-    // jQuery samples
+    //////////////////////////////////////////////////////////////////////////
+    // jQuery Selectors & Methods
+    //////////////////////////////////////////////////////////////////////////
     // $('#section1 .card-header').html('- new section -');
     // $('#section1 .card-body').html('This is the updated HTML');
     // $('#section1').css({
@@ -76,20 +114,76 @@
     // });
 
     // // jQuery is a chainable language
-    // $('#section1').slideUp(3000).slideDown(3000).slideToggle();
-    
+    // $('#section1').slideUp(3000).slideDown(3000).slideToggle();    
     // $('#section2').css({
     //     fontWeight: '500'
     // }).fadeOut(3000).fadeIn(3000).fadeToggle();
-
     // $('#section3').hide(3000).show(3000);
     
     // $('div').fadeToggle(2000); // every div on the page
 
     // $("[id*='sect'").slideToggle(1000).slideToggle(1000); // all id's containing '..'
     // $("[id^='button']").fadeToggle(1000).fadeToggle(1000); // all id's starting with '..'
-    $("[id$='3']").slideToggle(1000); // all id's ending with '..'
+    // $("[id$='3']").slideToggle(1000); // all id's ending with '..'
 
+    /////////////////////////////////////////////////////////////////////////
+    // jQuery Event Listening
+    /////////////////////////////////////////////////////////////////////////
+    // $(function(){
+
+    //     $('#button1').on('click', function(){
+    //        // alert('button1 was clicked!')
+    //        $(this).html('New button text').hide(1000).show(1000); // this refers to button1
+    //        $('#section3').css({opacity:'0.2'});
+    //     });
+
+    //     $('#button2').on('click', function(){
+    //         $('#section3 .card-header').html('New header');            
+    //         $('[id*=section] .card-body').html('New content');
+    //     });
+
+    //     $('#button2').on('mouseover', function(){
+    //         $('#section2').slideToggle(500);
+    //     });
+
+    //     $('#button2').on('mouseleave', function(){
+    //         $('#section2').slideToggle(1000);
+    //     });
+
+    // });
+
+    /////////////////////////////////////////////////////////////////////////
+    // jQuery Clean Code
+    /////////////////////////////////////////////////////////////////////////
+        // $(function(){
+
+        //     $('.btn').on('click', function(){
+        //         var sectionId = $(this).attr('data-section');
+        //         console.log(sectionId);
+        //         $('#'+sectionId).toggle(300);
+        //     });
+
+        // });
+
+    /////////////////////////////////////////////////////////////////////////
+    // DOM Traversal
+    /////////////////////////////////////////////////////////////////////////
+    $(function(){
+
+        $('li').on('click', function(){
+            // $(this).next().remove();
+            // if class is amazing then remove, else add
+            if($(this).is('.amazing')){
+                $(this).removeClass('amazing');
+            }else{
+                $(this).addClass('amazing');
+            }
+
+      
+        });
+
+    });
+    
 
     </script>
 </body>
