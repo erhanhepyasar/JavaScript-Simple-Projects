@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Marks</title>
+</head>
+<body>
+    
+    <script>
+        var m1 = parseInt(prompt('Input Math mark:'));
+        var m2 = parseInt(prompt('Input Physics mark:'));
+        var m3 = parseInt(prompt('Input Chemistry mark:'));
+
+        var avgMarks = (m1 + m2 + m3) / 3;
+
+        var msg = "";
+        if(avgMarks <= 70){
+            msg = "C";
+        } else if(avgMarks > 70 && avgMarks <= 90){
+            msg = "B";
+        } else if(avgMarks > 90){
+            msg = "A";
+        }
+
+        msg += " Grade";
+
+        document.write(msg);
+    </script>
+</body>
+</html>
