@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Popups</title>
+</head>
+<body>
+    
+    <script>
+        x = parseInt(prompt("Enter first number:"));
+        y = parseInt(prompt("Enter second number:"));
+        alert("Calculating The Product");
+        document.write("Result is: " + (x * y) + "<br>");
+        a = confirm('Is it OK?')
+        if(a) {
+            document.write("You selected OK");
+        } else {
+            document.write("You selected Cancel");
+        }
+    </script>
+</body>
+</html>
