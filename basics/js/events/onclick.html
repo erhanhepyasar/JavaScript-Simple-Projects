@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>On Click</title>
+</head>
+
+<body>
+    <form name="calcform">
+        Number-1: <input type="text" name="num1"><br>
+        Number-2: <input type="text" name="num2"><br>
+        Result: <input type="text" name="result"><br>
+        <input type="button" name="add" value="add" onclick="calc(this)">&nbsp;&nbsp;
+        <input type="button" name="subs" value="subs" onclick="calc(this)">&nbsp;&nbsp;
+        <input type="button" name="multiply" value="mult" onclick="calc(this)">&nbsp;&nbsp;
+        <input type="button" name="divide" value="div" onclick="calc(this)">
+
+    </form>
+
+    <script>
+        function calc(a) {
+            var x = parseInt(document.calcform.num1.value);
+            var y = parseInt(document.calcform.num2.value);
+            var z = 0;
+            switch (a.value) {
+                case "add":
+                    z = x + y;
+                    break;
+                case "subs":
+                    z = x - y;
+                    break;
+                case "mult":
+                    z = x * y;
+                    break;
+                case "div":
+                    z = x / y;
+                    break;
+            }
+            document.calcform.result.value = z;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Key events</title>
+</head>
+<body>
+
+    <input type="text" onkeydown="func1(this)" onkeyup="func2(this)" onkeypress="func3(this)">
+
+    <script>
+    function func1(a){
+        a.style.backgroundColor = 'red';
+    }
+    function func2(a){
+        a.style.backgroundColor = 'yellow';
+    }
+    function func3(a){
+        a.style.backgroundColor = 'grey';
+    }
+    </script>
+    
+</body>
+</html>

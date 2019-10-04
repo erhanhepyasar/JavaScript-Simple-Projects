@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p{
+            font-weight: 600;
+            font-size: 3rem;
+        }
+    </style>
+    <title>Mouse Events</title>
+</head>
+<body>
+    <p onmouseover="func1(this)" onmouseout="func2(this)" 
+    onmousedown="func3(this)" onmouseup="func4(this)">Mouse Events</p>
+    
+
+    <script>
+        function func1(x) {
+            x.style.color = "red";
+            x.innerHTML = 'mouse over'
+        }
+
+        function func2(x) {
+            x.style.color = "yellow";
+            x.innerHTML = 'mouse out'
+
+        }
+
+        function func3(x) {
+            x.style.color = "green";
+            x.style.paddingLeft = '3rem'
+            x.style.backgroundColor = 'black'
+            x.innerHTML = 'mouse down'
+        }
+
+        function func4(x) {
+            x.style.color = "blue";
+            x.style.paddingLeft = '0'
+            x.style.backgroundColor = 'white'
+            x.innerHTML = 'mouse up'
+        }
+    
+    </script>
+</body>
+</html>

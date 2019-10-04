@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Error Handling</title>
+</head>
+<body>
+
+    <input type="text" id="input1" placeholder="Age">
+    <input type="button" onclick="validateAge()" value="Validate">
+    <p id="errorInfo"></p>
+    <p id="finallyInfo"></p>
+
+    <script>
+
+    
+    
+    function validateAge(){
+        document.getElementById("errorInfo").innerHTML = "";
+        try {
+            var age = document.getElementById("input1").value;
+            if(age == ""){
+                throw "Age can not be empty !";
+            }
+            if(age < 18) {
+                throw "Too young to vote !"
+            }
+        } catch (obj) {
+            document.getElementById("errorInfo").innerHTML = obj;
+            document.getElementById("errorInfo").style.color = "red";
+        } finally{
+            document.getElementById("finallyInfo").innerHTML = "Inside finally";
+        }
+    }
+
+
+
+
+        
+    try {
+        functionUndefined();
+        console.log("After error");
+    } catch (error) {
+        console.log("Inside catch: " + error.message);
+    }    
+    console.log("After try-catch block");
+    
+    </script>
+    
+</body>
+</html>

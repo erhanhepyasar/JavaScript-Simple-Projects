@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>On change</title>
+</head>
+<body>
+
+    <select onchange="func1(this.value)">
+        <option value="">Select a color</option>
+        <option value="black">black</option>
+        <option value="red">red</option>
+        <option value="grey">grey</option>
+        <option value="blue">blue</option>
+    </select>
+    <br><br>
+    <select onchange="func2(this.value)">
+        <option value="http://www.google.com">Google</option>
+        <option value="http://www.linkedin.com">Linkedin</option>
+        <option value="http://www.stackoverflow.com">Stackoverflow</option>
+    </select>
+
+    <script>
+        function func1(color){
+            document.bgColor = color;
+        }
+    
+        function func2(siteUrl) {
+            window.location = siteUrl;
+        }
+    </script>
+    
+</body>
+</html>
