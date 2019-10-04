@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nodes</title>
+    <style>
+        p {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <p id="p1">This is the 1st paragraph</p>
+        <p id="p2">This is the 2nd paragraph</p>
+    </div>
+    <input type="button" value="remove" onclick="handleRemove()">
+    <input type="button" value="create" onclick="handleCreate()">
+    
+    <script>
+        var parent = document.getElementById("div1");
+        
+        function handleRemove() {
+            parent.removeChild(document.getElementById("p2"));
+        }   
+
+        function handleCreate(){
+            var child = document.createElement("p");
+            var text = document.createTextNode("I am new in here");
+            child.appendChild(text);
+            parent.appendChild(child);
+        }
+    </script>
+</body>
+</html>

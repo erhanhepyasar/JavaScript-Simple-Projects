@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regex</title>
+</head>
+<body>
+    
+    <form name="myform" action="newpage.php" onsubmit="return validate()">
+        <textarea name="address" placeholder="Address"></textarea>
+        <input type="submit" value="Send"><br>
+        <b id="err"></b>
+    </form>
+
+    <script>
+        function validate(){
+            // var exp = /^[A-Za-z0-9\s]+$/;
+            var exp = /^[A-Za-z0-9\s]{3,10}$/; // 3-10 adet karakter girilmeli
+            var address = document.myform.address.value;
+            var result = exp.test(address);
+            
+            if(result){
+                // alert("Validation successfull");
+                document.getElementById("err").innerHTML = ""
+            } else{
+                document.getElementById("err").innerHTML = "Validaiton failed";
+                document.myform.address.focus();
+                return false;
+
+            }
+
+        }
+    </script>
+</body>
+</html>

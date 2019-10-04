@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var blogpost = new function(){
+            this.title = "Ruby on rails";
+            this.text = "Rapid web development";
+            this.displayDetails = function(){
+                document.write(this.title + "<br>");
+                document.write(this.text + "<br>");
+            }
+        }
+
+        blogpost.displayDetails();
+    </script>
+</body>
+</html>

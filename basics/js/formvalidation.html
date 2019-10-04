@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Validation</title>
+</head>
+<body>
+    
+    <form name="myform" action="registration.jsp" onsubmit="return validate()">
+        <input type="email" id="email" placeholder="E-mail"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <input type="submit" value="Register">    
+    </form>
+
+    <script>
+        function validate(){
+            var email = document.myform.email;
+            var password = document.myform.password;
+
+            if(email.value == ""){
+                alert("E-mail is mandatory");
+                email.focus();
+                return false;
+            } else if(password.value == ""){
+                alert("Password is mandatory");
+                password.focus();
+                return false;
+            } else{
+                alert("Valdiation successfull");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
