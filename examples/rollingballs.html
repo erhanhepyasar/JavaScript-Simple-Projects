@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+      <title>Rolling balls</title>
+      <style>
+          .container{
+              width:100%;
+              height: 40vh;
+              background-color: bisque;
+          }
+
+          #ball1, #ball2 {
+              position:relative;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              transition: all 2s linear;
+          }
+
+          #ball1, .btn1 {
+              background-color: red;
+          }
+
+          #ball2, .btn2 {
+              background-color: blue;
+          }
+
+          .btn1, .btn2{
+              width: 5rem;
+              height: 3rem;
+              font-weight: 1000;
+              font-size:2rem;
+          }
+    
+      
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div id="ball1">
+       
+        </div>
+        <div id="ball2">
+
+        </div>
+    </div>
+    <button class="btn1" onclick="moveBallOneToLeft()"><<</button>
+    <button class="btn1" onclick="moveBallOneToRight()">>></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn2" onclick="moveBallTwoToLeft()"><<</button>
+    <button class="btn2" onclick="moveBallTwoToRight()">>></button>
+
+    <script>
+        var ball1 = document.getElementById("ball1");
+        var ball2 = document.getElementById("ball2");
+       
+        function moveBallOneToLeft(){
+            ball1.style.left = 0;
+            ball1.style.backgroundColor = "red";
+            ball1.style.border = "none";
+        }
+
+        function moveBallOneToRight(){
+            ball1.style.left = "90%";
+            ball1.style.backgroundColor = "forestgreen";
+            ball1.style.border = "0.5rem solid black";
+        }
+
+        function moveBallTwoToLeft(){
+            ball2.style.left = 0;
+        }
+
+        function moveBallTwoToRight(){
+            ball2.style.left = "85%";
+        }
+    
+    </script>
+</body>
+</html>
